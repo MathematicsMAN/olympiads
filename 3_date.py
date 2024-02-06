@@ -60,6 +60,7 @@ y_in = input()
 y_in = [int(x) for x in y_in]
 m_in = [int(x) for x in m_in]
 d_in = [int(x) for x in d_in]
+d_in[-1] += 1
 
 res = get_date(y_in, m_in, d_in)
 y_out = "".join(map(str, res[0]))
