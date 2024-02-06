@@ -46,7 +46,7 @@ def get_date(y:list[int], m:list[int], d:list[int]) -> tuple[int, ...]:
             if d[1] == 10:
                 d[0] += 1
                 d[1] = 0
-            if int_num(d) > 29 and int_num(m) == 2 and is_leap_year(y) or int_num(d) > months[int_num(m)]:
+            if int_num(m) == 2 and is_leap_year(y) and int_num(d) > 28 or int_num(d) > months[int_num(m)]:
                 m[-1] += 1
                 d = [1]
             y, m, d = get_date(y, m, d)
