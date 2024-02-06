@@ -41,7 +41,7 @@ def get_date(y:list[int], m:list[int], d:list[int]) -> tuple[int, ...]:
             d[0] += 1
             y, m, d = get_date(y, m, d)
     else:
-        if d[0] in y or d[0] in m or d[1] in y or d[1] in m:
+        if d[0] in y or d[0] in m or d[1] in y or d[1] in m or d[0] == d[1]:
             d[1] += 1
             if d[1] == 10:
                 d[0] += 1
@@ -63,9 +63,9 @@ d_in = [int(x) for x in d_in]
 d_in[-1] += 1
 
 res = get_date(y_in, m_in, d_in)
-y_out = "".join(map(str, res[0]))
-m_out = "".join(map(str, res[1]))
-d_out = "".join(map(str, res[2]))
+y_out = int_num(res[0])
+m_out = int_num(res[1])
+d_out = int_num(res[2])
 print(f"{y_out}.{m_out}.{d_out}")
 
 # test1
