@@ -26,7 +26,7 @@ def get_date(y:list[int], m:list[int], d:list[int]) -> tuple[int, ...]:
         if int_num(m) == 13 or 1 in y:
             y[-1] += 1
             y, m, d = get_date(y, [1], [1])
-        if m == [1, 1] or m[1] in y:
+        if int_num(m) >= 10 and (m == [1, 1] or m[1] in y):
             m[1] += 1
             y, m, d = get_date(y, m, [1])
     else:
@@ -66,7 +66,7 @@ res = get_date(y_in, m_in, d_in)
 y_out = int_num(res[0])
 m_out = int_num(res[1])
 d_out = int_num(res[2])
-print(f"{y_out}.{m_out}.{d_out}")
+print(f"{d_out}.{m_out}.{y_out}")
 
 # test1
 # input: 10 9 1234
